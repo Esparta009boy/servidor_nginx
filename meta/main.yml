@@ -1,4 +1,6 @@
 galaxy_info:
+  role_name: servidor_nginx
+  namespace: ronaldo
   author: Ronaldo Rozendo
   description: Role para provisionamento automatizado do Nginx
   company: Independent

@@ -2,5 +2,7 @@
 - name: Converge
   hosts: all
   become: true
-  roles:
-    - role: ../../../servidor_nginx
+  tasks:
+    - name: Incluir a role servidor_nginx
+      ansible.builtin.include_role:
+        name: ronaldo.servidor_nginx
