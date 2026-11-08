@@ -1,0 +1,30 @@
+name: Molecule Test - Servidor Nginx
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  molecule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fazer checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar Ansible, Molecule, Docker driver e Testinfra
+        run: |
+          pip install ansible molecule molecule-docker pytest-testinfra
+
+      - name: Executar ciclo completo do Molecule
+        env:
+          ANSIBLE_ALLOW_BROKEN_CONDITIONALS: "true"
+        run: |
+          molecule test

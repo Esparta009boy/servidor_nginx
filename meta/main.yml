@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Ronaldo Rozendo
+  description: Role para provisionamento automatizado do Nginx
+  company: Independent
+  issue_tracker_url: "https://github.com/Esparta009boy/servidor_nginx/issues"
+  license: MIT
+  min_ansible_version: "2.10"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
+  galaxy_tags:
+    - nginx
+    - webserver
+    - systemd
+
+dependencies: []

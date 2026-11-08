@@ -1,0 +1,12 @@
+---
+- name: Atualizar o cache do apt e instalar o pacote Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Garantir que o serviço Nginx esteja rodando e habilitado no boot
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: yes
